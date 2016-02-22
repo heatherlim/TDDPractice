@@ -20,7 +20,8 @@ describe Set do
 
   describe "#to_array" do
     it "returns an array of all elements in the set" do
-      expect(@shortset.to_array).to contain_exactly(1)
+      @set = Set.new([1])
+      expect(@set.to_array).to contain_exactly(1)
     end
   end
 
