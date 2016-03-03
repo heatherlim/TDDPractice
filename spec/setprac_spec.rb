@@ -65,7 +65,7 @@ describe Set do
 
   describe "#intersection" do
     it "finds the common values between two sets" do
-      expect(@mediumset.intersection(@mediumset2)).to contain_exactly(4, 5, 6)
+      expect(@mediumset.intersection(@mediumset2).to_array).to contain_exactly(4, 5, 6)
     end
   end
 

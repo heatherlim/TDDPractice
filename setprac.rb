@@ -1,6 +1,6 @@
 class Set
 
-  def initialize(array)
+  def initialize(array=[])
     if array.class != Array
       @array = []
     else
@@ -34,7 +34,7 @@ class Set
 
   def union(set)
     unionSet = Set.new(@array)
-    newSet = set.to_array.flatten
+    newSet = set.to_array
       newSet.each do |element|
         unionSet.add(element)
       end
@@ -42,12 +42,12 @@ class Set
   end
 
   def intersection(set)
-    intersectionSet = []
+    intersectionSet = Set.new
     otherArray = set.to_array
     @array.each do |element|
       otherArray.each do |otherElement|
         if element == otherElement
-          intersectionSet << element
+          intersectionSet.add(element)
         end
       end
     end
