@@ -55,24 +55,24 @@ class Set
   end
 
   def complement(set)
-    complementSet = []
+    complementSet = Set.new
     otherArray = set.to_array
     otherArray.each do |otherElement|
       if @array.include?(otherElement) == false
-        complementSet << otherElement
+        complementSet.add(otherElement)
       end
     end
     return complementSet
   end
 
   def xor(set)
-    xorSet = []
+    xorSet = Set.new
     otherArray = set.to_array
     @array.each do |element|
       otherArray.each do |otherElement|
-        if @array.include?(otherElement) == false && otherArray.include?(element) == false && xorSet.include?(element) == false && xorSet.include?(otherElement) == false
-          xorSet << element
-          xorSet << otherElement
+        if @array.include?(otherElement) == false && otherArray.include?(element) == false && xorSet.to_array.include?(element) == false && xorSet.to_array.include?(otherElement) == false
+          xorSet.add(element)
+          xorSet.add(otherElement)
         end
       end
     end

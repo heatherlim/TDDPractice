@@ -71,13 +71,13 @@ describe Set do
 
   describe "#complement" do
     it "finds the different values of one set when compared to another" do
-      expect(@shortset.complement(@mediumset)).to contain_exactly(2, 3, 4, 5, 6)
+      expect(@shortset.complement(@mediumset).to_array).to contain_exactly(2, 3, 4, 5, 6)
     end
   end
 
   describe "#xor" do
     it "compares two sets and finds what is exclusive to each one" do
-      expect(@mediumset.xor(@mediumset2)).to contain_exactly(1, 2, 3, 7, 8, 9)
+      expect(@mediumset.xor(@mediumset2).to_array).to contain_exactly(1, 2, 3, 7, 8, 9)
     end
   end
 
